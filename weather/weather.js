@@ -34,38 +34,45 @@ let config = {
 var weatherInfo = {};
 weather()
 
-function weather(){
-    getdata();
-    
+function weather() {
+    getdata()
 }
-function getdata(){
+function getdata() {
     console.log('1')
     $http.get(`https://api.darksky.net/forecast/${config.darksky_api}/${config.lat_lon}?lang=${config.lang}&units=si`).then(function successCallback(response) {
         // 请求成功执行代码
         console.log(response.data.hourly.summary)
         weatherInfo.summary = response.data.hourly.summary
-        aqi();
+        aqi()
     }, function errorCallback(response) {
         // 请求失败执行代码
     });
 }
 
-
 function info() {
-    console.log('3')
+    console.log('4')
     $push.schedule({
         title: `${weatherInfo.city}${weatherInfo.summary}`,
         body: weatherInfo.summary
     })
 }
-function aqi(){
+function aqi() {
     console.log('2')
     $http.get(`https://api.waqi.info/feed/geo:${config.lat_lon.replace(/,/, ";")}/?token=${config.aqicn_api}`).then(function successCallback(response) {
         // 请求成功执行代码
-        console.log('city')
-        console.log(response.data)
         console.log(response.data.data.city.name)
         weatherInfo.city = response.data.data.city.name
+        heweatherLifestyle()
+    }, function errorCallback(response) {
+        // 请求失败执行代码
+    });
+}
+function heweatherLifestyle() {
+    console.log('3')
+    $http.get(`https://free-api.heweather.net/s6/weather/lifestyle?location=${config.lat_lon}&key=${config.huweather_apiKey}`).then(function successCallback(response) {
+        // 请求成功执行代码
+        console.log(response.data.HeWeather6[0].lifestyle)
+        weatherInfo.lifestyle = response.data.HeWeather6[0].lifestyle;
         info()
     }, function errorCallback(response) {
         // 请求失败执行代码
