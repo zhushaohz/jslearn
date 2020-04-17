@@ -35,10 +35,19 @@ var weatherInfo = {};
 weather()
 
 function weather() {
-    getlocation()
+    where()
     
 }
 
+function where() {
+    $location.fetch({
+        handler: function(resp){
+            var loc = resp.lat+','+resp.lng
+            config.lat_lon = loc
+            getlocation()
+        }
+    })
+}
 function getlocation() {
     console.log('0')
     $http.get(`http://api.map.baidu.com/reverse_geocoding/v3/?ak=vsVQld8ey3jKUkvGXOOVaUlrCgkznG2H&output=json&coordtype=wgs84ll&location=${config.lat_lon}`).then(function successCallback(response) {
