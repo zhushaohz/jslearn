@@ -49,12 +49,13 @@ if ($nobyda.isRequest) {
 
 function checkin() {
   var bonus = {
-    url: 'https://www.52pojie.cn/home.php?mod=task&do=apply&id=2&mobile=no',
+    url: 'https://www.hao4k.cn/plugin.php?id=k_misign:sign&operation=qiandao&formhash=d48046d5&format=empty',
     headers: {
       Cookie: $nobyda.read("CookieWA"),
     }
   };
   $nobyda.get(bonus, function(error, response, data) {
+    $nobyda.notify("吾爱破解", "签到请求失败 ‼️‼️", data)
     if (error) {
       console.log(error);
       $nobyda.notify("吾爱破解", "签到请求失败 ‼️‼️", error)
@@ -75,8 +76,8 @@ function checkin() {
 
 function GetCookie() {
   try {
-    if ($request.headers && $request.url.match(/www\.52pojie\.cn/)) {
-      var CookieName = "吾爱破解";
+    if ($request.headers && $request.url.match(/www\.hao4k\.cn/)) {
+      var CookieName = "hao4k";
       var CookieKey = "CookieWA";
       var CookieValue = $request.headers['Cookie'];
       if ($nobyda.read(CookieKey)) {
