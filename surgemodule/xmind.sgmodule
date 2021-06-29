@@ -1,5 +1,5 @@
-#!name=Unlock xmind
-#!desc=xmind
+#!name=Unlock Xmind
+#!desc=Xmind
 [MITM]
 hostname = %APPEND% *.xmind.*
 [Script]
