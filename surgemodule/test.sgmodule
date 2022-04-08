@@ -1,0 +1,6 @@
+#!name=Unlock Standards
+#!desc=Standards
+[MITM]
+hostname = store-service.standards.org.au
+[Script]
+Standards = type=http-response,pattern=^https://store-service.standards.org.au/shop/ereader/table-of-content?designationId=as-nzs-2243-2-2006,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/hermitli/sub/master/quan/JS/test.js,,script-update-interval=0
