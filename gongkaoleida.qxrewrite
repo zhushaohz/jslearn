@@ -1,0 +1,3 @@
+^https?:\/\/api\.gongkaoleida\.com\/api\/v5.*$ url script-response-body https://raw.githubusercontent.com/zhushaohz/jslearn/master/gongkaoleida.js
+
+hostname = api.gongkaoleida.com
