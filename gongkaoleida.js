@@ -20,7 +20,7 @@ if (obj.data) {
                 }
             ];
             obj.data.userInfo.isVip = 1;
-            obj.data.usrrInfo.vipExpire = 0;
+            obj.data.userInfo.vipExpire = 0;
         };
         
 }
