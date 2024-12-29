@@ -4,4 +4,4 @@
 hostname = han.jiaojq.vip
 
 [Script]
-Standards = type=http-response,pattern=^https://han.jiaojq.vip/api/app/user/info/person,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/hermitli/sub/master/quan/JS/test.js,,script-update-interval=0
+Standards = type=http-response,pattern=^https://han.jiaojq.vip/api/app/user/info/person,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/zhushaohz/jslearn/refs/heads/master/han.js,script-update-interval=0
